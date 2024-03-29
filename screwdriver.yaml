@@ -1,0 +1,16 @@
+shared:
+  image: node:20
+annotations:
+  screwdriver.cd/chainPR: true
+jobs:
+  second:
+    requires: [~pr, ~commit]
+    steps:
+    - noop: |
+        echo "world"
+    - teardown-step: |
+        echo $(meta get meta.build_status)
+        meta set meta.status.first '{"status":"SUCCESS","message":"Coverage is above 80%."}'
+  first:
+    template: sd/noop@latest
+    requires: [second]
