@@ -1,7 +1,6 @@
 shared:
   image: node:20
-annotations:
-  screwdriver.cd/chainPR: true
+
 jobs:
   second:
     requires: [~pr, ~commit]
