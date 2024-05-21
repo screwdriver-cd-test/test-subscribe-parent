@@ -1,3 +1,3 @@
 ### test-subscribe-parent
 
-This is just a test repo for fun.
+This is just a test repo for fun for now.
